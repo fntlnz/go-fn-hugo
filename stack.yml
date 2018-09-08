@@ -1,0 +1,10 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+  #gateway: http://192.168.99.100:31112
+
+functions:
+  hugo-builder:
+    lang: go
+    handler: ./hugo-builder
+    image: fntlnz/hugo-builder:latest
