@@ -4,7 +4,13 @@ provider:
   #gateway: http://192.168.99.100:31112
 
 functions:
-  hugo-builder:
+  blog:
     lang: go
-    handler: ./hugo-builder
-    image: fntlnz/hugo-builder:latest
+    handler: ./blog
+    image: fntlnz/hugo-fn-blog:latest
+    environment:
+      content_type: "text/html"
+      combine_output: "false"
+      repository: "https://github.com/fntlnz/fntlnz.wtf.git"
+      baseurl: "https://fntlnz.o6s.io/blog"
+      #baseurl: "http://192.168.99.100:31112/function/blog"
